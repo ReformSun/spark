@@ -95,16 +95,16 @@ public class JavaSparkSQLExample {
     // $example off:init_session$
 
     runBasicDataFrameExample(spark);
-    runDatasetCreationExample(spark);
-    runInferSchemaExample(spark);
-    runProgrammaticSchemaExample(spark);
+//    runDatasetCreationExample(spark);
+//    runInferSchemaExample(spark);
+//    runProgrammaticSchemaExample(spark);
 
     spark.stop();
   }
 
   private static void runBasicDataFrameExample(SparkSession spark) throws AnalysisException {
     // $example on:create_df$
-    Dataset<Row> df = spark.read().json("examples/src/main/resources/people.json");
+    Dataset<Row> df = spark.read().json("./examples/src/main/resources/people.json");
 
     // Displays the content of the DataFrame to stdout
     df.show();
